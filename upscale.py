@@ -19,7 +19,7 @@ def upscale(input_path: str, output_path: str, model_path: str = "EDSR_x2.pb") -
     :return:
     """
 
-    scaler = dnn_superres.DnnSuperResImpl()
+    scaler = dnn_superres.DnnSuperResImpl_create()
     scaler.readModel(model_path)
     scaler.setModel("edsr", 2)
     image = cv2.imread(input_path)
