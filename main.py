@@ -4,7 +4,7 @@ import uuid
 from celery.result import AsyncResult
 from flask import Flask, jsonify, request
 from flask.views import MethodView
-from tasks import celery_app, upscale
+from upscale import celery_app, upscale
 
 app = Flask("app")
 app.config["UPLOAD_FOLDER"] = "files"

@@ -1,8 +1,9 @@
 import os
 
 import cv2
-from celery import Celery
 from cv2 import dnn_superres
+from celery import Celery
+
 
 BACKEND = os.getenv("BACKEND")
 BROKER = os.getenv("BROKER")
