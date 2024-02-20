@@ -16,13 +16,12 @@ services:
   celery:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile_celery
     env_file:
       - ./.env.test
     entrypoint: celery -A celery_app.celery_app worker
     depends_on:
       - redis
-      - app
     networks:
       dev_network:
     volumes:
