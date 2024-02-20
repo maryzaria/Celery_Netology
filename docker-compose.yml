@@ -16,6 +16,7 @@ services:
   celery:
     build:
       context: .
+      dockerfile: Dockerfile.celery
     environment:
       BACKEND: ${BACKEND}
       BROKER: ${BROKER}
