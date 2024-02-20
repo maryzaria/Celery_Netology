@@ -5,9 +5,8 @@ from celery.result import AsyncResult
 from flask import Flask, jsonify, request
 from flask.views import MethodView
 
-from upscale import upscale
 from celery_app import celery_app
-
+from upscale import upscale
 
 app = Flask("app")
 app.config["UPLOAD_FOLDER"] = "files"
