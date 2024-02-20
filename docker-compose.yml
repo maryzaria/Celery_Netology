@@ -16,13 +16,13 @@ services:
   celery:
     build:
       context: .
-      dockerfile: Dockerfile.celery
-    environment:
-      BACKEND: ${BACKEND}
-      BROKER: ${BROKER}
-    entrypoint: celery -A upscale.celery_app worker
+      dockerfile: Dockerfile
+    env_file:
+      - ./.env.test
+    entrypoint: celery -A celery_app.celery_app worker
     depends_on:
       - redis
+      - app
     networks:
       dev_network:
     volumes:
@@ -31,9 +31,8 @@ services:
   app:
     build:
       context: .
-    environment:
-      BACKEND: ${BACKEND}
-      BROKER: ${BROKER}
+    env_file:
+      - ./.env.test
     entrypoint: python main.py
     depends_on:
       - redis

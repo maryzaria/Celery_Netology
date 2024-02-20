@@ -45,3 +45,7 @@ docker-compose --env-file .env.test up celery
 ```shell
 docker-compose --env-file .env.test up app
 ```
+Можно запустить все приложение сразу:
+```shell
+docker-compose --env-file .env.test up app
+```

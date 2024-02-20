@@ -1,5 +1,5 @@
-opencv-contrib-python==4.6.0.66
-opencv-python==4.6.0.66
 celery==5.2.7
 redis==4.4.0
 Flask==3.0.2
+opencv-python==4.6.0.66
+opencv-contrib-python==4.6.0.66
