@@ -1,16 +1,17 @@
-FROM python:3.10-alpine3.16
+FROM python:3.9
 
 WORKDIR /app
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN apk update
+RUN apt update
+
 RUN  pip install --upgrade pip
+
+RUN apt install -y python3-opencv
 
 COPY ./requirements.txt /app/requirements.txt
 RUN pip install -r /app/requirements.txt
 
 COPY . /app
-
-ENTRYPOINT ["/app/run_app.sh"]
